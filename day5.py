@@ -10,24 +10,13 @@ def bsp(lower, upper, line):
             lower = math.ceil(mid)
     return upper
 
-# def scan_missing(seats):
-#     for i in range(len(seats)):
-#         seats = sorted(seats, key=lambda x: x[0])
-#         prev = sorted(seats[0])[0]
-#         # print(prev)
-#         for n in seats:
-#             prev+=1
-#             if n[0] != prev:
-#                 return n
-def scan_missing(seats):
-    print(seats[0])
+def scan_missing(seats): #come back later + simplify
     prev = seats[0] - 1
     for s in seats:
         prev+= 1
         if s != prev:
-            return s
+            return s - 1
         
-
 with open('day5.txt') as f:
     seats = []
     for line in f:
@@ -35,11 +24,7 @@ with open('day5.txt') as f:
         c = bsp(0, 7, line[7:])
         seats.append((r*8) + c)
     seats = sorted(seats)
-    print(seats)
     print(scan_missing(seats))
-    # result = scan_missing(seats)
-    # print(result)
-    # print((result[0]*8)+result[1])
             
 
 
