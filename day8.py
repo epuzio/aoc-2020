@@ -20,7 +20,7 @@ def check_termination(instr, acc):
     acc = 0
     visited = set()
     idx = 0
-    while idx < len(instr): #bad practice
+    while idx < len(instr):
         if idx in visited:
             return False
         visited.add(idx)
