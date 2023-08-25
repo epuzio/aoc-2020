@@ -5,24 +5,24 @@ with open('day8.txt') as f:
     for line in f:
         lines.append(line.strip()) #def a better way to do this 
 
-instructions_list = [] #fix this
+instructions_list = []
 for n, line in enumerate(lines):
     if 'nop' in line:
-        instructions_list.append(lines)
+        instructions_list.append(lines[:]) # [:] creates shallow copy
         instructions_list[-1][n] = 'jmp' + line[3:]
+        continue
     if 'jmp' in line:
-        instructions_list.append(lines)
+        instructions_list.append(lines[:])
         instructions_list[-1][n] = 'nop' + line[3:]
+        continue
 
-print(instructions_list)
-
-def check_termination(instr, acc):
-    acc = 0
+def check_termination(instr):
     visited = set()
     idx = 0
+    acc = 0
     while idx < len(instr):
         if idx in visited:
-            return False
+            return False, acc
         visited.add(idx)
         if 'jmp' in instr[idx]:   
             idx += int(instr[idx].split('jmp ')[1])
@@ -30,16 +30,13 @@ def check_termination(instr, acc):
         if 'acc' in instr[idx]:
             acc += int(instr[idx].split('acc ')[1])
         idx+=1
-    return True
+    return True, acc
 
-acc = 0
+
 for l in instructions_list:
-    if check_termination(l, acc):
-        print(acc)
-
-
-
-
+    terminates, result = check_termination(l)
+    if terminates:
+        print(result)
 
 
 

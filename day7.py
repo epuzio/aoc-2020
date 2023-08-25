@@ -4,7 +4,7 @@
 
 import re
 with open('day7.txt') as f:
-    all_bags = dict()
+    all_bags = dict() #store as inner bag -> outer bag
     for line in f:
         children = []
         bag = re.match(r"(.+?) bags contain", line)[1] 
