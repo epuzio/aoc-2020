@@ -1,5 +1,3 @@
-#i love methcanics!!
-
 lines = open('day10.txt').readlines() # reading in input
 lines = [int(line.strip()) for line in lines]
 lines.append(0) # include the outlet (0 jolts)...
