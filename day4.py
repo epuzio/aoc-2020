@@ -1,7 +1,5 @@
-# Part 2:
+# Part 2 (In Progress):
 
-# Can I play Papers, Please? -> "We have Papers, Please at home"
-# The Papers, Please? at home:
 import re
 
 byr_valid = lambda year: 1920 <= year <= 2002

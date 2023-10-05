@@ -1,5 +1,4 @@
 # Part 2
-
 with open('day6.txt') as f:
     groups = f.read().split('\n\n')
     total = 0
@@ -12,11 +11,7 @@ with open('day6.txt') as f:
         total +=len(s)
     print(total)
 
-
-
-
-# # Part 1
-
+# Part 1
 with open('day6.txt') as f: 
     groups = f.read().split('\n\n')
     total = 0

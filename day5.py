@@ -10,7 +10,7 @@ def bsp(lower, upper, line):
             lower = math.ceil(mid)
     return upper
 
-def scan_missing(seats): #come back later + simplify
+def scan_missing(seats):
     prev = seats[0] - 1
     for s in seats:
         prev+= 1

@@ -3,7 +3,7 @@
 with open('day8.txt') as f:
     lines = []
     for line in f:
-        lines.append(line.strip()) #def a better way to do this 
+        lines.append(line.strip())
 
 instructions_list = []
 for n, line in enumerate(lines):
@@ -37,8 +37,6 @@ for l in instructions_list:
     terminates, result = check_termination(l)
     if terminates:
         print(result)
-
-
 
 
 # # Part 1:

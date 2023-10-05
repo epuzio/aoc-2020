@@ -1,4 +1,4 @@
-# Part 1:
+# Part 1 (In Progress):
 
 import re
 with open('day7.txt') as f:
